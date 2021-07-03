@@ -4,7 +4,7 @@ use Foostart\Category\Library\Models\FooModel;
 use Illuminate\Database\Eloquent\Model;
 use Foostart\Comment\Models\Comment;
 
-class Classes extends FooModel {
+class Myclass extends FooModel {
 
     /**
      * @table categories
@@ -22,7 +22,7 @@ class Classes extends FooModel {
     public function setConfigs() {
 
         //table name
-        $this->table = 'classes';
+        $this->table = 'Myclass';
 
         //list of field in table
         $this->fillable = array_merge($this->fillable, [

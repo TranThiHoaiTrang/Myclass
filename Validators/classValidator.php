@@ -7,7 +7,7 @@ use Tranthihoaitrang\Myclass\Models\Classes;
 
 use Illuminate\Support\MessageBag as MessageBag;
 
-class ClassValidator extends FooValidator
+class classValidator extends FooValidator
 {
 
     protected $obj_class;
