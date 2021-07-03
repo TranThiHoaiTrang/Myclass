@@ -21,10 +21,10 @@ class MyclassSeeder extends FoostartSeeder
     public function run()
     {
         //Create context for user/level
-        DB::table('contexts')->insert([
-            $this->prefix_context . 'name' => 'Admin classes',
+        DB::table('myclass')->insert([
+            $this->prefix_context . 'name' => 'Admin myclass',
             $this->prefix_context . 'key' => 'ab7e417e2dddc5240b586d454e',
-            $this->prefix_context . 'ref' => 'admin/classes',
+            $this->prefix_context . 'ref' => 'admin/myclass',
             'status' => 99,
             'created_user_id' => 1,
             'updated_user_id' => 1,
@@ -33,7 +33,7 @@ class MyclassSeeder extends FoostartSeeder
         ]);
         
         //Create context for user/level
-        DB::table('contexts')->insert([
+        DB::table('myclass')->insert([
             $this->prefix_context . 'name' => 'Admin slideshows',
             $this->prefix_context . 'key' => 'ab7e417e2dddc5e5240b586d454f',
             $this->prefix_context . 'ref' => 'admin/slideshows',

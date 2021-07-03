@@ -27,15 +27,15 @@ class CreateMyclassTable extends FoostartMigration
             $table->integer('slideshow_id')->nullable()->comment('Slideshow ID');
             
             // Other attributes
-            $table->string($this->prefix_column . 'name', 255)->comment('class name');
+            $table->string($this->prefix_column . 'name', 255)->comment('myclass name');
             $table->integer($this->prefix_column . 'order')->nullable()->comment('Order in list of categories');
             $table->string($this->prefix_column . 'slug', 1000)->comment('Slug in URL');
-            $table->string($this->prefix_column . 'overview', 1000)->comment('class overview');            
-            $table->text($this->prefix_column . 'description')->comment('class description');
+            $table->string($this->prefix_column . 'overview', 1000)->comment('myclass overview');            
+            $table->text($this->prefix_column . 'description')->comment('myclass description');
             $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Image path');
             $table->string($this->prefix_column . 'files', 1000)->nullable()->comment('The list of attachment filenames');
-            $table->text($this->prefix_column . 'cache_comments')->nullable()->comment('Comments of class');
-            $table->string($this->prefix_column . 'cache_other_classes', 1000)->nullable()->comment('The class id of related classes ');
+            $table->text($this->prefix_column . 'cache_comments')->nullable()->comment('Comments of myclass');
+            $table->string($this->prefix_column . 'cache_other_myclass', 1000)->nullable()->comment('The myclass id of related myclass ');
             $table->integer($this->prefix_column . 'cache_time')->nullable()->comment('Order in list of categories');
             
             //Set common columns
