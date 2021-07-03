@@ -1,0 +1,26 @@
+{
+    "name": "tranthihoaitrang/Myclass",
+    "description": "Manage Myclass",
+    "keywords": [
+        "tranthihoaitrang",
+        "laravel 5 package Myclass"
+    ],
+    "authors": [
+        {
+            "name": "Tranthihoaitrang",
+            "email": "Tranthihoaitrang@gmail.com",
+            "homepage": ""
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "foostart/package-slideshow": "*",
+        "foostart/package-filemanager": "*"
+    },
+    "autoload": {
+        "psr-4": {
+           "Tranthihoaitrang\\Myclass\\": "/" 
+        }
+    },
+    "minimum-stability": "dev"
+}
