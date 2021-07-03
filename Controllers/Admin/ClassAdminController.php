@@ -36,7 +36,7 @@ class ClassAdminController extends FooController {
         parent::__construct();
 
         //models
-        $this->obj_item = new Classes(array('perPage' => 10));
+        $this->obj_item = new Myclass(array('perPage' => 10));
         $this->obj_category = new Category();
         $this->obj_slideshow = new Slideshow();
 
@@ -44,15 +44,15 @@ class ClassAdminController extends FooController {
         $this->obj_validator = new ClassValidator();
 
         //set language files
-        $this->plang_admin = 'class-admin';
-        $this->plang_front = 'class-front';
+        $this->plang_admin = 'myclass-admin';
+        $this->plang_front = 'myclass-front';
 
         //package name
         $this->package_name = 'Myclass';
-        $this->package_base_name = 'class';
+        $this->package_base_name = 'myclass';
 
         //root routers
-        $this->root_router = 'classes';
+        $this->root_router = 'myclass';
 
         //page views
         $this->page_views = [
@@ -118,7 +118,7 @@ class ClassAdminController extends FooController {
 
         } else if (empty($params['user_id']) || ($params['user_id'] != $user['user_id'])) {
 
-            return redirect()->route('classes.list', ['user_id' => $user['user_id']]);
+            return redirect()->route('myclass.list', ['user_id' => $user['user_id']]);
 
         }
         
@@ -331,7 +331,7 @@ class ClassAdminController extends FooController {
             $content = file_get_contents($config_path);
         }
 
-        if ($request->isMethod('class') && $is_valid_request) {
+        if ($request->isMethod('Myclass') && $is_valid_request) {
 
             //create backup of current config
             file_put_contents($config_bakup.'/Myclass-'.date('YmdHis',time()).'.php', $content);
@@ -411,14 +411,14 @@ class ClassAdminController extends FooController {
             }
         }
 
-        if ($request->isMethod('class') && $is_valid_request) {
+        if ($request->isMethod('Myclass') && $is_valid_request) {
 
             //create backup of current config
             foreach ($lang_paths as $key => $value) {
                 $content = file_get_contents($value);
 
                 //format file name class-admin-YmdHis.php
-                file_put_contents($lang_bakup.'/'.$key.'/class-admin-'.date('YmdHis',time()).'.php', $content);
+                file_put_contents($lang_bakup.'/'.$key.'/myclass-admin-'.date('YmdHis',time()).'.php', $content);
             }
 
 
