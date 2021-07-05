@@ -3,15 +3,15 @@ return [
 
     //Number of worlds
     'length' => [
-        'class_name' => [
+        'Myclass_name' => [
             'min' => 10,
             'max' => 255,
         ],
-        'class_overview' => [
+        'Myclass_overview' => [
             'min' => 10,
             'max' => 255,
         ],
-        'class_description' => [
+        'Myclass_description' => [
             'min' => 255,
             'max' => 0,//unlimit
         ],

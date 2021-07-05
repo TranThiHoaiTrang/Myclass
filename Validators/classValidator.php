@@ -16,9 +16,9 @@ class classValidator extends FooValidator
     {
         // add rules
         self::$rules = [
-            'class_name' => ["required"],
-            'class_overview' => ["required"],
-            'class_description' => ["required"],
+            'Myclass_name' => ["required"],
+            'Myclass_overview' => ["required"],
+            'Myclass_description' => ["required"],
         ];
 
         // set configs
@@ -28,16 +28,16 @@ class classValidator extends FooValidator
         $this->obj_class = new Classes();
 
         // language
-        $this->lang_front = 'class-front';
-        $this->lang_admin = 'class-admin';
+        $this->lang_front = 'Myclass-front';
+        $this->lang_admin = 'Myclass-admin';
 
         // event listening
         Event::listen('validating', function($input)
         {
             self::$messages = [
-                'class_name.required'          => trans($this->lang_admin.'.errors.required', ['attribute' => trans($this->lang_admin.'.fields.name')]),
-                'class_overview.required'      => trans($this->lang_admin.'.errors.required', ['attribute' => trans($this->lang_admin.'.fields.overview')]),
-                'class_description.required'   => trans($this->lang_admin.'.errors.required', ['attribute' => trans($this->lang_admin.'.fields.description')]),
+                'Myclass_name.required'          => trans($this->lang_admin.'.errors.required', ['attribute' => trans($this->lang_admin.'.fields.name')]),
+                'Myclass_overview.required'      => trans($this->lang_admin.'.errors.required', ['attribute' => trans($this->lang_admin.'.fields.overview')]),
+                'Myclass_description.required'   => trans($this->lang_admin.'.errors.required', ['attribute' => trans($this->lang_admin.'.fields.description')]),
             ];
         });
 
@@ -59,28 +59,28 @@ class classValidator extends FooValidator
 
         $params = [
             'name' => [
-                'key' => 'class_name',
+                'key' => 'Myclass_name',
                 'label' => trans($this->lang_admin.'.fields.name'),
-                'min' => $_ln['class_name']['min'],
-                'max' => $_ln['class_name']['max'],
+                'min' => $_ln['Myclass_name']['min'],
+                'max' => $_ln['Myclass_name']['max'],
             ],
             'overview' => [
-                'key' => 'class_overview',
+                'key' => 'Myclass_overview',
                 'label' => trans($this->lang_admin.'.fields.overview'),
-                'min' => $_ln['class_overview']['min'],
-                'max' => $_ln['class_overview']['max'],
+                'min' => $_ln['Myclass_overview']['min'],
+                'max' => $_ln['Myclass_overview']['max'],
             ],
             'description' => [
-                'key' => 'class_description',
+                'key' => 'Myclass_description',
                 'label' => trans($this->lang_admin.'.fields.description'),
-                'min' => $_ln['class_description']['min'],
-                'max' => $_ln['class_description']['max'],
+                'min' => $_ln['Myclass_description']['min'],
+                'max' => $_ln['Myclass_description']['max'],
             ],
         ];
 
-        $flag = $this->isValidLength($input['class_name'], $params['name']) ? $flag : FALSE;
-        $flag = $this->isValidLength($input['class_overview'], $params['overview']) ? $flag : FALSE;
-        $flag = $this->isValidLength($input['class_description'], $params['description']) ? $flag : FALSE;
+        $flag = $this->isValidLength($input['Myclass_name'], $params['name']) ? $flag : FALSE;
+        $flag = $this->isValidLength($input['Myclass_overview'], $params['overview']) ? $flag : FALSE;
+        $flag = $this->isValidLength($input['Myclass_description'], $params['description']) ? $flag : FALSE;
 
         return $flag;
     }

@@ -379,7 +379,7 @@ class ClassAdminController extends FooController {
         
         if (!empty($langs) && is_array($langs)) {
             foreach ($langs as $key => $value) {
-                $lang_paths[$key] = realpath(base_path('resources/lang/'.$key.'/class-admin.php'));
+                $lang_paths[$key] = realpath(base_path('resources/lang/'.$key.'/myclass-admin.php'));
 
                 $key_backup = $package_path.'/storage/backup/lang/'.$key;
 

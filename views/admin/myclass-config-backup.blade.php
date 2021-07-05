@@ -28,28 +28,15 @@
             </thead>
 
             <tbody>
-                <?php
-                    $version = count($backups[$lang]);
-                    $other_backups = $backups;
-                    unset($other_backups[$lang]);
-                ?>
-                @foreach($backups[$lang] as $index => $backup)
+                <?php $version = count($backups) ?>
+                @foreach($backups as  $backup)
                 <tr>
                     <!--COUNTER-->
                     <td> {!! 'v.'.$version; $version-- !!}  </td>
 
                     <!--NAME-->
-                    <?php
-                    $group_backup = "$lang=".realpath($backup);
-                    foreach ($other_backups as $key => $other_backup) {
-                        foreach ($other_backup as $_backup) {
-                            $group_backup .= ";$key=".realpath($other_backup[$index]);
-                            break;
-                        }
-                    }
-                    ?>
                     <td>
-                        <a href="{!! URL::route('classes.lang', ['v' => base64_encode($group_backup), 'lang' => $lang]) !!}">
+                        <a href="{!! URL::route('myclass.config', ['v' => base64_encode($backup)]) !!}">
                             {!! basename($backup) !!}
                         </a>
                     </td>

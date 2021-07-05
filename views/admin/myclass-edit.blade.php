@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
 
-                            @include('package-class::admin.class-form')
+                            @include('myclass::admin.myclass-form')
 
                         </div>
                     </div>
@@ -74,7 +74,7 @@
         </div>
 
         <div class='col-md-3'>
-            @include('package-class::admin.class-search')
+            @include('myclass::admin.myclass-search')
         </div>
 
     </div>

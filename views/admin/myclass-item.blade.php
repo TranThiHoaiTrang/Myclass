@@ -1,4 +1,6 @@
+
 @if(!empty($items) && (!$items->isEmpty()) )
+
 <?php
     $withs = [
         'order' => '10%',
@@ -146,7 +148,7 @@
                     @endif
 
                     <!--edit-->
-                    <a href="{!! URL::route('classes.edit', [   'id' => $item->id,
+                    <a href="{!! URL::route('myclass.edit', [   'id' => $item->id,
                                                                 '_token' => csrf_token()
                                                             ])
                             !!}">
@@ -155,7 +157,7 @@
 
 
                     <!--copy-->
-                    <a href="{!! URL::route('classes.copy',[    'cid' => $item->id,
+                    <a href="{!! URL::route('myclass.copy',[    'cid' => $item->id,
                                                                 '_token' => csrf_token(),
                                                             ])
                              !!}"
@@ -164,7 +166,7 @@
                     </a>&nbsp;
                     
                     <!--delete-->
-                    <a href="{!! URL::route('classes.delete',['id' => $item->id,
+                    <a href="{!! URL::route('myclass.delete',['id' => $item->id,
                                                                 '_token' => csrf_token(),
                                                                  ])
                              !!}"

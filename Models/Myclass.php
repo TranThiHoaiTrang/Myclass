@@ -26,12 +26,12 @@ class Myclass extends FooModel {
 
         //list of field in table
         $this->fillable = array_merge($this->fillable, [
-            'class_name',
-            'class_slug',
-            'class_overview',
-            'class_description',
-            'class_image',
-            'class_files',
+            'Myclass_name',
+            'Myclass_slug',
+            'Myclass_overview',
+            'Myclass_description',
+            'Myclass_image',
+            'Myclass_files',
             //Relation
             'category_id',
             'slideshow_id',
@@ -39,28 +39,28 @@ class Myclass extends FooModel {
 
         //list of fields for inserting
         $this->fields = array_merge($this->fields, [
-            'class_name' => [
-                'name' => 'class_name',
+            'Myclass_name' => [
+                'name' => 'Myclass_name',
                 'type' => 'Text',
             ],
-            'class_slug' => [
-                'name' => 'class_slug',
+            'Myclass_slug' => [
+                'name' => 'Myclass_slug',
                 'type' => 'Text',
             ],
-            'class_overview' => [
-                'name' => 'class_overview',
+            'Myclass_overview' => [
+                'name' => 'Myclass_overview',
                 'type' => 'Text',
             ],
-            'class_description' => [
-                'name' => 'class_description',
+            'Myclass_description' => [
+                'name' => 'Myclass_description',
                 'type' => 'Text',
             ],
-            'class_image' => [
-                'name' => 'class_image',
+            'Myclass_image' => [
+                'name' => 'Myclass_image',
                 'type' => 'Text',
             ],
-            'class_files' => [
-                'name' => 'files',
+            'Myclass_files' => [
+                'name' => 'Myclass_files',
                 'type' => 'Json',
             ],
             //Relation
@@ -76,12 +76,12 @@ class Myclass extends FooModel {
 
         //check valid fields for inserting
         $this->valid_insert_fields = array_merge($this->valid_insert_fields, [
-            'class_name',
-            'class_slug',
-            'class_overview',
-            'class_description',
-            'class_image',
-            'class_files',
+            'Myclass_name',
+            'Myclass_slug',
+            'Myclass_overview',
+            'Myclass_description',
+            'Myclass_image',
+            'Myclass_files',
             //Relation
             'category_id',
             'slideshow_id',
@@ -89,7 +89,7 @@ class Myclass extends FooModel {
 
         //check valid fields for ordering
         $this->valid_ordering_fields = [
-            'class_name',
+            'Myclass_name',
             'updated_at',
             $this->field_status,
         ];
@@ -100,13 +100,13 @@ class Myclass extends FooModel {
             'category',
             '_id',
             'limit',
-            'class_id!',
+            'Myclass_id!',
             'category_id',
             'user_id',
         ];
 
         //primary key
-        $this->primaryKey = 'class_id';
+        $this->primaryKey = 'Myclass_id';
 
     }
 
@@ -179,7 +179,7 @@ class Myclass extends FooModel {
 
         // Get comment by context
         $params = array(
-            'context_name' => 'class',
+            'context_name' => 'Myclass',
             'context_id' => $class_id,
             'by_status' => true,
         );
@@ -243,7 +243,7 @@ class Myclass extends FooModel {
                             break;
                         case '_id':
                             if (!empty($value)) {
-                                $elo = $elo->where($this->table . '.class_id', '!=', $value);
+                                $elo = $elo->where($this->table . '.Myclass_id', '!=', $value);
                             }
                             break;
                         case 'status':
@@ -254,9 +254,9 @@ class Myclass extends FooModel {
                         case 'keyword':
                             if (!empty($value)) {
                                 $elo = $elo->where(function($elo) use ($value) {
-                                    $elo->where($this->table . '.class_name', 'LIKE', "%{$value}%")
-                                    ->orWhere($this->table . '.class_description','LIKE', "%{$value}%")
-                                    ->orWhere($this->table . '.class_overview','LIKE', "%{$value}%");
+                                    $elo->where($this->table . '.Myclass_name', 'LIKE', "%{$value}%")
+                                    ->orWhere($this->table . '.Myclass_description','LIKE', "%{$value}%")
+                                    ->orWhere($this->table . '.Myclass_overview','LIKE', "%{$value}%");
                                 });
                             }
                             break;
@@ -282,7 +282,7 @@ class Myclass extends FooModel {
     public function createSelect($elo) {
 
         $elo = $elo->select($this->table . '.*',
-                            $this->table . '.class_id as id'
+                            $this->table . '.Myclass_id as id'
                 );
 
         return $elo;

@@ -2,7 +2,7 @@
 | List of elements in post form
 |------------------------------------------------------------------------------->
 
-{!! Form::open(['route'=>['classes.class', 'id' => @$item->id],  'files'=>true, 'method' => 'class'])  !!}
+{!! Form::open(['route'=>['classes.class', 'id' => @$item->id],  'files'=>true, 'method' => 'post'])  !!}
 
     <!--BUTTONS-->
     <div class='btn-form'>
