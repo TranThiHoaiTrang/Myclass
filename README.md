@@ -64,4 +64,13 @@ class ConfigHandler
         return $user->id;
     }
 }
+
+## Step 7: Set up router
+[
+            'name'        => 'class-admin.menus.top-menu',
+            "route"       => "Myclass",
+            "link"        => '/admin/Myclass',
+            "permissions" => [$admin]
+        ],
+
 ```
