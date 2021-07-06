@@ -16,19 +16,11 @@
 
 ## Step 1: Add service providers to **config/app.php**
 
-1. Foostart\Post\PostServiceProvider::class,
-1. Foostart\Slideshow\SlideshowServiceProvider::class,
-1. Foostart\Filemanager\FilemanagerServiceProvider::class,
-1. Intervention\Image\ImageServiceProvider::class,
+1. Tranthihoaitrang\Myclass\ClassServiceProvider::class
 
-## Step 2: Add class aliases to **config/app.php**
+## Step 2: Install publish
 
-1. 'Image' => Intervention\Image\Facades\Image::class,
-1. 'Input' => Illuminate\Support\Facades\Request::class,
-
-## Step 3: Install publish
-
-1. php artisan vendor:publish --provider="Foostart\Post\PostServiceProvider" --force
+1. php artisan vendor:publish --provider="Tranthihoaitrang\Myclass\ClassServiceProvider" --force
 1. php artisan vendor:publish --provider="Foostart\Slideshow\SlideshowServiceProvider" --force
 
 
@@ -49,27 +41,3 @@ Run the following
 1. php artisan migrate
 1. php artisan db:seed
 
-## Step 7: Add user
-
-foostart\laravel-filemanager\src\Handlers\ConfigHandler.php
-```
-<?php
-
-namespace Foostart\Filemanager\Handlers;
-
-
-class ConfigHandler
-{
-    public function userField()
-    {
-        //original
-        //return auth()->user()->id;
-        $auth = \App::make('authenticator');
-        $user = $auth->getLoggedUser();
-        if (empty($user)) {
-            return NULL;
-        }
-        return $user->id;
-    }
-}
-```
