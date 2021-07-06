@@ -26,18 +26,42 @@
 
 
 
-## Step 4: Publish the package’s config and assets :
+## Step 3: Publish the package’s config and assets :
 
 1. php artisan vendor:publish --tag=lfm_config
 1. php artisan vendor:publish --tag=lfm_public
 
-## Step 5: Clear cache
+## Step 4: Clear cache
 1. php artisan route:clear
 1. php artisan config:clear
 1. php artisan storage:link
 
-## Step 6: Migrate and Seeder
+## Step 5: Migrate and Seeder
 Run the following
 1. php artisan migrate
 1. php artisan db:seed
 
+## Step 6: Add user
+
+foostart\laravel-filemanager\src\Handlers\ConfigHandler.php
+```
+<?php
+
+namespace Foostart\Filemanager\Handlers;
+
+
+class ConfigHandler
+{
+    public function userField()
+    {
+        //original
+        //return auth()->user()->id;
+        $auth = \App::make('authenticator');
+        $user = $auth->getLoggedUser();
+        if (empty($user)) {
+            return NULL;
+        }
+        return $user->id;
+    }
+}
+```
