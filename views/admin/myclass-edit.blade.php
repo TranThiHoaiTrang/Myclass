@@ -15,6 +15,7 @@
 |
 |_______________________________________________________________________________
 -->
+
 @extends('package-acl::admin.layouts.base-2cols')
 
 @section('title')
@@ -37,6 +38,7 @@
                             :
                             '<i class="fa fa-users"></i>'.trans($plang_admin.'.pages.title-add')
                         !!}
+                        
                     </h3>
                 </div>
 
@@ -60,13 +62,12 @@
                         @include('package-category::admin.partials.success', ['message' => Session::get('message')])
                     </div>
                 @endif
-
+                
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
 
-                            @include('myclass::admin.myclass-form')
-
+                            @include('Myclass::admin.myclass-form')
                         </div>
                     </div>
                 </div>
@@ -74,7 +75,7 @@
         </div>
 
         <div class='col-md-3'>
-            @include('myclass::admin.myclass-search')
+            @include('Myclass::admin.myclass-search')
         </div>
 
     </div>

@@ -47,7 +47,7 @@
 
                     <!--BODY-->
                     <div class="panel-body">
-                        {!! Form::open(['route'=>['myclass.lang'], 'method' => 'post'])  !!}
+                        {!! Form::open(['route'=>['Myclass.lang'], 'method' => 'post'])  !!}
 
                             <div class='btn-form'>
 
@@ -94,7 +94,7 @@
 
             <!--SEARCH-->
             <div class="col-md-4">
-                @include('myclass::admin.myclass-lang-backup')
+                @include('Myclass::admin.myclass-lang-backup')
             </div>
             <!--/SEARCH-->
 

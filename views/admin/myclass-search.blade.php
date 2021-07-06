@@ -19,7 +19,7 @@
             {!! Form::submit(trans($plang_admin.'.buttons.search').'', ["class" => "btn btn-info", 'id' => 'search-submit']) !!}
         </div>
 
-        
+     
         <!-- KEYWORD -->
         @include('package-category::admin.partials.input_text', [
         'name' => 'keyword',

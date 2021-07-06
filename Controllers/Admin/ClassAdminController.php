@@ -16,7 +16,7 @@ use URL, Route, Redirect;
 use Illuminate\Support\Facades\App;
 
 use Foostart\Category\Library\Controllers\FooController;
-use Tranthihoaitrang\Myclass\Models\Classes;
+use Tranthihoaitrang\Myclass\Models\Myclass;
 use Foostart\Category\Models\Category;
 use Foostart\Slideshow\Models\Slideshow;
 use Tranthihoaitrang\Myclass\Validators\ClassValidator;
@@ -52,7 +52,7 @@ class ClassAdminController extends FooController {
         $this->package_base_name = 'myclass';
 
         //root routers
-        $this->root_router = 'myclass';
+        $this->root_router = 'Myclass';
 
         //page views
         $this->page_views = [
@@ -134,9 +134,10 @@ class ClassAdminController extends FooController {
             'breadcrumb_3' => $this->breadcrumb_3,
             'is_admin' => $is_admin,
             'user_id' => $user['user_id'],
-            'config_status' => $this->obj_item->config_status
+            'config_status' => $this->obj_item->config_status,
+            //
+            'plang_admin' => $this->plang_admin
         ));
-
         return view($this->page_views['admin']['items'], $this->data_view);
     }
 
@@ -192,6 +193,8 @@ class ClassAdminController extends FooController {
             'breadcrumb_2' => $this->breadcrumb_2,
             'breadcrumb_3' => $this->breadcrumb_3,
         ));
+
+        
         return view($this->page_views['admin']['edit'], $this->data_view);
     }
 
@@ -202,6 +205,7 @@ class ClassAdminController extends FooController {
      */
     public function class(Request $request) {
         
+       
         $item = NULL;
 
         $params = array_merge($request->all(), $this->getUser());
@@ -209,9 +213,9 @@ class ClassAdminController extends FooController {
         $is_valid_request = $this->isValidRequest($request);
 
         $id = (int) $request->get('id');
-
+        
         if ($is_valid_request && $this->obj_validator->validate($params)) {// valid data
-
+            
             // update existing item
             if (!empty($id)) {
 
@@ -219,6 +223,8 @@ class ClassAdminController extends FooController {
 
                 if (!empty($item)) {
 
+                   
+               
                     $item = $this->obj_item->updateItem($params, $id);
 
                     // message
@@ -233,7 +239,7 @@ class ClassAdminController extends FooController {
 
             // add new item
             } else {
-
+         
                 $item = $this->obj_item->insertItem($params);
 
                 if (!empty($item)) {
@@ -253,7 +259,8 @@ class ClassAdminController extends FooController {
         } else { // invalid data
 
             $errors = $this->obj_validator->getErrors();
-
+            // dd(777777777777);
+            // dd($this->root_router);
             // passing the id incase fails editing an already existing item
             return Redirect::route($this->root_router.'.edit', $id ? ["id" => $id]: [])
                     ->withInput()->withErrors($errors);

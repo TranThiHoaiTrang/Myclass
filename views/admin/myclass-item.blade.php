@@ -37,7 +37,7 @@
             </th>
 
             <!-- NAME -->
-            <?php $name = 'class_name' ?>
+            <?php $name = 'Myclass_name' ?>
 
             <th class="hidden-xs" style='width:{{ $withs['name'] }}'>{!! trans($plang_admin.'.columns.name') !!}
                 <a href='{!! $sorting["url"][$name] !!}' class='tb-id' data-order='asc'>
@@ -119,7 +119,7 @@
                 </td>
 
                 <!--NAME-->
-                <td> {!! $item->class_name !!} </td>
+                <td> {!! $item->Myclass_name !!} </td>
                 
                 <!--STATUS-->
                 <td style="text-align: center;">
@@ -148,7 +148,7 @@
                     @endif
 
                     <!--edit-->
-                    <a href="{!! URL::route('myclass.edit', [   'id' => $item->id,
+                    <a href="{!! URL::route('Myclass.edit', [   'id' => $item->id,
                                                                 '_token' => csrf_token()
                                                             ])
                             !!}">
@@ -157,7 +157,7 @@
 
 
                     <!--copy-->
-                    <a href="{!! URL::route('myclass.copy',[    'cid' => $item->id,
+                    <a href="{!! URL::route('Myclass.copy',[    'cid' => $item->id,
                                                                 '_token' => csrf_token(),
                                                             ])
                              !!}"
@@ -166,7 +166,7 @@
                     </a>&nbsp;
                     
                     <!--delete-->
-                    <a href="{!! URL::route('myclass.delete',['id' => $item->id,
+                    <a href="{!! URL::route('Myclass.delete',['id' => $item->id,
                                                                 '_token' => csrf_token(),
                                                                  ])
                              !!}"

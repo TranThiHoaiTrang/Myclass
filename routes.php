@@ -7,7 +7,7 @@ use Illuminate\Session\TokenMismatchException;
  */
 Route::get('Myclass', [
     'as' => 'Myclass',
-    'uses' => 'tranthihoaitrang\Myclass\Controllers\Front\ClassFrontController@index'
+    'uses' => 'tranthihoaitrang\myclass\Controllers\Front\ClassFrontController@index'
 ]);
 
 
@@ -17,7 +17,7 @@ Route::get('Myclass', [
 Route::group(['middleware' => ['web']], function () {
 
     Route::group(['middleware' => ['admin_logged', 'can_see', 'in_context'],
-                  'namespace' => 'tranthihoaitrang\Myclass\Controllers\Admin',
+                  'namespace' => 'Tranthihoaitrang\Myclass\Controllers\Admin',
         ], function () {
 
         /*

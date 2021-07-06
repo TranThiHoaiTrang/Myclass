@@ -15,18 +15,16 @@ use Foostart\Category\Helpers\SortTable;
 |   $plang_front = 'class-front'
 */
 View::composer([
-                'Myclass::admin.class-edit',
-                'Myclass::admin.class-form',
-                'Myclass::admin.class-items',
-                'Myclass::admin.class-item',
-                'Myclass::admin.class-search',
-                'Myclass::admin.class-config',
-                'Myclass::admin.class-lang',
+                'Myclass::admin.myclass-edit',
+                'Myclass::admin.myclass-form',
+                'Myclass::admin.myclass-items',
+                'Myclass::admin.myclass-item',
+                'Myclass::admin.myclass-search',
+                'Myclass::admin.myclass-config',
+                'Myclass::admin.myclass-lang',
     ], function ($view) {
 
         //Order by params
-        $params = Request::all();
-
         /**
          * $plang-admin
          * $plang-front
@@ -71,7 +69,7 @@ View::composer([
         $orders = [
             '' => trans($plang_admin.'.form.no-selected'),
             'id' => trans($plang_admin.'.fields.id'),
-            'class_name' => trans($plang_admin.'.fields.name'),
+            'Myclass_name' => trans($plang_admin.'.fields.name'),
             'status' => trans($plang_admin.'.columns.status'),
             'updated_at' => trans($plang_admin.'.fields.updated_at'),
         ];

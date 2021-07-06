@@ -46,7 +46,7 @@
 
                     <!--BODY-->
                     <div class="panel-body">
-                        {!! Form::open(['route'=>['myclass.config'], 'method' => 'post'])  !!}
+                        {!! Form::open(['route'=>['Myclass.config'], 'method' => 'post'])  !!}
 
                             <div class='btn-form'>
 
@@ -69,7 +69,7 @@
 
             <!--SEARCH-->
             <div class="col-md-4">
-                @include('myclass::admin.myclass-config-backup')
+                @include('Myclass::admin.myclass-config-backup')
             </div>
             <!--/SEARCH-->
 

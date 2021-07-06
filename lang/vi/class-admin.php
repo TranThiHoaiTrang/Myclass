@@ -48,7 +48,7 @@ return [
     */
     'columns' => [
         'order' => '#',
-        'name' => 'class name',
+        'name' => 'Myclass name',
         'operations' => 'Operations',
         'updated_at' => 'Updated at',
         'filename' => 'File name',
@@ -122,8 +122,8 @@ return [
     |
     */
     'descriptions' => [
-        'form' => 'class form',
-        'update' => 'Update class',
+        'form' => 'Myclass form',
+        'update' => 'Update Myclass',
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'slug' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'category' => 'Click <a href=":href">here</a> to manage list of categories by token.',
@@ -171,10 +171,10 @@ return [
     |
     */
     'fields' => [
-        'id' => 'class ID',
-        'name' => 'class name',
-        'description' => 'class Description',
-        'overview' => 'class Overview',
+        'id' => 'Myclass ID',
+        'name' => 'Myclass name',
+        'description' => 'Myclass Description',
+        'overview' => 'Myclass Overview',
         'slug' => 'Slug',
         'updated_at' => 'Updated at'
     ],
@@ -192,15 +192,15 @@ return [
     |
     */
     'labels' => [
-        'name' => 'class name',
-        'slug' => 'class slug',
-        'overview' => 'class overview',
-        'description' => 'class description',
-        'image' => 'class image',
-        'files' => 'class files',
+        'name' => 'Myclass name',
+        'slug' => 'Myclass slug',
+        'overview' => 'Myclass overview',
+        'description' => 'Myclass description',
+        'image' => 'Myclass image',
+        'files' => 'Myclass files',
         'category' => 'Category name',
         'slideshow' => 'Slideshow name',
-        'title-search' => 'Search class',
+        'title-search' => 'Search Myclass',
         'title-backup' => 'Backups',
         'config' => 'Configurations',
         'keyword' => 'Keyword',

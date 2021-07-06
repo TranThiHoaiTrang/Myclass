@@ -2,13 +2,13 @@
 | List of elements in post form
 |------------------------------------------------------------------------------->
 
-{!! Form::open(['route'=>['classes.class', 'id' => @$item->id],  'files'=>true, 'method' => 'post'])  !!}
+{!! Form::open(['route'=>['Myclass.class', 'id' => @$item->id],  'files'=>true, 'method' => 'post'])  !!}
 
     <!--BUTTONS-->
     <div class='btn-form'>
         <!-- DELETE BUTTON -->
         @if($item)
-            <a href="{!! URL::route('classes.delete',['id' => @$item->id, '_token' => csrf_token()]) !!}"
+            <a href="{!! URL::route('Myclass.delete',['id' => @$item->id, '_token' => csrf_token()]) !!}"
             class="btn btn-danger pull-right margin-left-5 delete">
                 {!! trans($plang_admin.'.buttons.delete') !!}
             </a>
@@ -54,10 +54,10 @@
 
             <!--CLASS NAME-->
             @include('package-category::admin.partials.input_text', [
-                'name' => 'class_name',
-                'id' => 'class_name',
+                'name' => 'Myclass_name',
+                'id' => 'Myclass_name',
                 'label' => trans($plang_admin.'.labels.name'),
-                'value' => @$item->class_name,
+                'value' => @$item->Myclass_name,
                 'description' => trans($plang_admin.'.descriptions.name'),
                 'errors' => $errors,
             ])
@@ -65,11 +65,11 @@
 
             <!--CLASS SLUG-->
             @include('package-category::admin.partials.input_slug', [
-                'name' => 'class_slug',
-                'id' => 'class_slug',
-                'ref' => 'class_name',
+                'name' => 'Myclass_slug',
+                'id' => 'Myclass_slug',
+                'ref' => 'Myclass_name',
                 'label' => trans($plang_admin.'.labels.slug'),
-                'value' => @$item->class_slug,
+                'value' => @$item->Myclass_slug,
                 'description' => trans($plang_admin.'.descriptions.slug'),
                 'errors' => $errors,
             ])
@@ -124,9 +124,9 @@
 
             <!--CLASS DESCRIPTION-->
             @include('package-category::admin.partials.textarea', [
-                'name' => 'class_description',
+                'name' => 'Myclass_description',
                 'label' => trans($plang_admin.'.labels.description'),
-                'value' => @$item->class_description,
+                'value' => @$item->Myclass_description,
                 'description' => trans($plang_admin.'.descriptions.description'),
                 'rows' => 70,
                 'tinymce' => true,
@@ -140,9 +140,9 @@
         <div id="menu_2" class="tab-pane fade">
             <!--CLASS OVERVIEW-->
             @include('package-category::admin.partials.textarea', [
-            'name' => 'class_overview',
+            'name' => 'Myclass_overview',
             'label' => trans($plang_admin.'.labels.overview'),
-            'value' => @$item->class_overview,
+            'value' => @$item->Myclass_overview,
             'description' => trans($plang_admin.'.descriptions.overview'),
             'tinymce' => false,
             'errors' => $errors,
@@ -155,9 +155,9 @@
         <div id="menu_3" class="tab-pane fade">
             <!--CLASS IMAGE-->
             @include('package-category::admin.partials.input_image', [
-            'name' => 'class_image',
+            'name' => 'Myclass_image',
             'label' => trans($plang_admin.'.labels.image'),
-            'value' => @$item->class_image,
+            'value' => @$item->Myclass_image,
             'description' => trans($plang_admin.'.descriptions.image'),
             'errors' => $errors,
             ])
@@ -167,7 +167,7 @@
             @include('package-category::admin.partials.input_files', [
                 'name' => 'files',
                 'label' => trans($plang_admin.'.labels.files'),
-                'value' => @$item->class_files,
+                'value' => @$item->Myclass_files,
                 'description' => trans($plang_admin.'.descriptions.files'),
                 'errors' => $errors,
             ])
