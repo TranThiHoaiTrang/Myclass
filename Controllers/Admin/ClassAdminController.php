@@ -338,7 +338,7 @@ class ClassAdminController extends FooController {
             $content = file_get_contents($config_path);
         }
 
-        if ($request->isMethod('Myclass') && $is_valid_request) {
+        if ($request->isMethod('post') && $is_valid_request) {
 
             //create backup of current config
             file_put_contents($config_bakup.'/Myclass-'.date('YmdHis',time()).'.php', $content);
@@ -418,7 +418,7 @@ class ClassAdminController extends FooController {
             }
         }
 
-        if ($request->isMethod('Myclass') && $is_valid_request) {
+        if ($request->isMethod('post') && $is_valid_request) {
 
             //create backup of current config
             foreach ($lang_paths as $key => $value) {
