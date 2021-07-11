@@ -1,10 +1,10 @@
 # Package Filemanager
 
 * @webiste: http://foostart.com
-* @package-name: package-filemanager
+* @package-name: package-myclass
 * @author: Kang
-* @date: 27/12/2017
-* @version: 2.0
+* @date: 12/07/2021
+* @version: 1.9
 
 ## Features
 
